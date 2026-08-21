@@ -11,7 +11,6 @@ Resolução das seis questões propostas na atividade, utilizando JavaScript.
 - `questao05.js`: cadastro de aplicativo;
 - `questao06.js`: análise de avaliações.
 
-Apesar de a estrutura mostrada na última página do enunciado terminar em `questao04.js`, o documento apresenta seis questões. Por esse motivo, foram incluídos também os arquivos das questões 5 e 6.
 
 ## Como executar
 
