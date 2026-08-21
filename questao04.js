@@ -35,8 +35,14 @@ const classificarConsumo = (totalContratado, quantidadeRestante) => {
 
 async function main() {
   console.log("\nQUESTÃO 4 - CONTROLE DE CONSUMO DE INTERNET\n");
-  const totalContratado = await lerNumero("Internet contratada em GB: ", 0.01);
-  const totalUtilizado = await lerNumero("Internet utilizada em GB: ", 0);
+  const totalContratado = await lerNumero(
+    "Digite a quantidade total de internet contratada em GB (exemplo: 20): ",
+    0.01
+  );
+  const totalUtilizado = await lerNumero(
+    "Digite a quantidade de internet já utilizada em GB (zero ou maior): ",
+    0
+  );
   const quantidadeRestante = calcularInternetRestante(totalContratado, totalUtilizado);
   const percentualRestante = (quantidadeRestante / totalContratado) * 100;
   const situacao = classificarConsumo(totalContratado, quantidadeRestante);
