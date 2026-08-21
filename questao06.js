@@ -8,7 +8,7 @@ const perguntar = mensagem => new Promise(resolve => {
 async function lerAvaliacoes() {
   while (true) {
     const resposta = await perguntar(
-      "Digite as avaliações separadas por vírgula [5, 8, 7, 10, 6, 9, 4]: "
+      "Digite as notas de 0 a 10, separadas por vírgula [padrão: 5, 8, 7, 10, 6, 9, 4]: "
     );
     if (resposta === "") return [5, 8, 7, 10, 6, 9, 4];
 
