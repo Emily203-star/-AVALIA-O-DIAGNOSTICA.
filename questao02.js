@@ -36,10 +36,14 @@ function verificarSituacao(frequencia, media) {
 
 async function main() {
   console.log("\nQUESTÃO 2 - SITUAÇÃO ACADÊMICA\n");
-  const nome = await lerTexto("Nome do aluno: ");
-  const primeiraNota = await lerNumero("Primeira nota: ", 0, 10);
-  const segundaNota = await lerNumero("Segunda nota: ", 0, 10);
-  const frequencia = await lerNumero("Percentual de frequência: ", 0, 100);
+  const nome = await lerTexto("Digite o nome completo do aluno: ");
+  const primeiraNota = await lerNumero("Digite a primeira nota (0 a 10): ", 0, 10);
+  const segundaNota = await lerNumero("Digite a segunda nota (0 a 10): ", 0, 10);
+  const frequencia = await lerNumero(
+    "Digite o percentual de frequência (0 a 100, sem o símbolo %): ",
+    0,
+    100
+  );
   const media = (primeiraNota + segundaNota) / 2;
   const situacao = verificarSituacao(frequencia, media);
 
