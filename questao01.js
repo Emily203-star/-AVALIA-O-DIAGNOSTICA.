@@ -29,7 +29,9 @@ async function lerNumero(mensagem, minimo = 0) {
 
 async function lerQuantidade() {
   while (true) {
-    const resposta = await perguntar("Quantidade comprada: ");
+    const resposta = await perguntar(
+      "Digite a quantidade comprada (somente número inteiro): "
+    );
     if (resposta === "") {
       console.log("Este campo é obrigatório.");
       continue;
@@ -86,8 +88,11 @@ const moeda = valor => valor.toLocaleString("pt-BR", {
 
 async function main() {
   console.log("\nQUESTÃO 1 - CALCULADORA DE COMPRA\n");
-  const nomeProduto = await lerTexto("Nome do produto: ");
-  const precoUnitario = await lerNumero("Preço unitário: R$ ", 0.01);
+  const nomeProduto = await lerTexto("Digite o nome do produto: ");
+  const precoUnitario = await lerNumero(
+    "Digite o preço unitário do produto em reais (exemplo: 49,90): R$ ",
+    0.01
+  );
   const quantidade = await lerQuantidade();
   const formaPagamento = await lerFormaPagamento();
   const compra = calcularCompra(nomeProduto, precoUnitario, quantidade, formaPagamento);
